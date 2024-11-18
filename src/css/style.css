@@ -1,0 +1,44 @@
+body{
+    background-color: grey;
+    color: black;
+    background-color: rgb(230, 159, 60);
+}
+
+#header{
+    background-color: rgb(60, 60, 60);
+    padding: 2% 2%;
+    border-radius: 2%;
+    border: 3px solid black;
+    text-align: center;
+}
+
+#logo{
+    width: 12%;
+}
+
+#title{
+    width: 60%;
+    text-align: center;
+    margin-left: 3.5%;
+}
+
+#content{
+    margin-top: 1%;
+    background-color: gray;
+    display: flex;
+    font-family:'Times New Roman', Times, serif;
+}
+
+h1{
+    display: none;
+}
+
+.div_fila{
+    padding: 2%;
+}
+
+footer{
+    background-color: black;
+    color: wheat;
+    display: grid;
+}
