@@ -28,8 +28,8 @@ SOFTWARE.
     
     <body>
       <section id="header">
-        <img id="logo" src="../src/img/logo.png">
-        <img id="title" src="../src/img/title.png">
+        <img id="logo" src="src/img/logo.png">
+        <img id="title" src="src/img/title.png">
     
         <h1>PASATIEMPOS</h1>
     </section>
@@ -207,22 +207,25 @@ SOFTWARE.
     <div class="wrap">
         
     <!--show candidates toggle-->
-    <label for="toggleCandidates">Posibilidades</label>
+    <label for="toggleCandidates">Show candidates </label>
     <input id="toggleCandidates" class="js-candidate-toggle" type="checkbox"/>
     <!--generate board buttons-->
-    <button type="button" class="sudokubutton1 js-generate-board-btn--easy">Fácil</button>
-    <button type="button" class="sudokubutton2 js-generate-board-btn--medium">Medio</button>
-    <button type="button" class="sudokubutton3 js-generate-board-btn--hard">Duro</button>
-    <button type="button" class="sudokubutton4 js-generate-board-btn--very-hard">Durísimo</button>
+    New:
+    <button type="button" class="sudokubutton1 js-generate-board-btn--easy">Easy</button>
+    <button type="button" class="sudokubutton2 js-generate-board-btn--medium">Medium</button>
+    <button type="button" class="sudokubutton3 js-generate-board-btn--hard">Hard</button>
+    <button type="button" class="sudokubutton4 js-generate-board-btn--very-hard">Very Hard</button>
     
     <!--the only required html-->
     <div id="sudoku" class="sudoku-board">
     </div>
     
     <!--solve buttons-->
-    Resolver: <button type="button" class="sudokubutton5 js-solve-step-btn">Resolver uno</button>
-    <button type="button" class="sudokubutton6 js-solve-all-btn">Resolver todo</button>
+    Solve: <button type="button" class="sudokubutton5 js-solve-step-btn">One Step</button>
+    <button type="button" class="sudokubutton6 js-solve-all-btn">All</button>
     <br>
+    <!--clear board btn-->
+    Clear: <button type="button" class="sudokubutton7 js-clear-board-btn">Board</button>
     </div>
     
     <script>
@@ -272,90 +275,9 @@ SOFTWARE.
     <head>
       <title>Sudoku</title>
       <link rel="icon" href="../src/img/logo.ico">
-      <link rel="stylesheet" href="src/css/sudoku.css">
+      <link rel="stylesheet" href="src/css/style.css">
   </head>
-  <footer>
-    <div>Aviso legal</div><div>¿Quiénes somos?</div>
-</footer>
+
   <style>
     
-* {
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    background-image: url(../img/background.jpg);
-    background-size:cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-image:url(../src/img/background.jpg);
-}
-
-#header {
-    text-align: center;
-    padding: 2%;
-    background-image: linear-gradient(to right, rgb(193, 126, 78), orange);
-    color: white;
-}
-
-#logo {
-    width: 10%;
-    margin-bottom: 1%;
-}
-
-#title {
-    width: 45%;
-    margin-bottom: 2.5%;
-    margin-left: 2%;
-}
-
-h1 {
-    display:none;
-}
-a{
-  display: none;
-}
-
-#content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;    
-    margin: 1% 0 3% 0;
-}
-.wrap{
-  margin-top: 1%;
-  margin-bottom: 5%;
-  text-align: center;
-}
-footer {
-    margin-top: 10%;
-    text-align: center;
-    background-color: #1a1a1a;
-    color: white;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    z-index: 100;
-}
-
-footer div {
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-
-footer div:hover {
-    color: #007BFF;
-}
-
   </style>
