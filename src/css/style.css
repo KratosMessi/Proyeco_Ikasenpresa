@@ -84,6 +84,9 @@ h1 {
 #Bingo{
     background-image: url(../img/bingo.png);
 }
+#HF{
+    background-image: url(../img/hf.jpg);
+}
 
 .juego{
     position: relative;
