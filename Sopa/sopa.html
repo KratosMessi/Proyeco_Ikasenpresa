@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sopa de Letras</title>
+    <link rel="stylesheet" href="sopa.css">
+    <link rel="stylesheet" href="../src/css/style.css">
+</head>
+<body>
+    <section id="header">
+        <a href="../index.html">
+            <img id="logo" src="../src/img/logo.png">
+        <a href="../index.html">
+            <img id="title" src="../src/img/title.png">
+        </a>
+    </section>
+    <h1>Sopa de Letras</h1>
+    <div id="ambatukam">
+    <div id="game-container">
+        <div id="grid"></div>
+        <div id="words-container">
+            <h2>Palabras a encontrar:</h2>
+            <ul id="word-list"></ul>
+        </div>
+    </div>
+</div>
+    <footer>
+        <div>Aviso legal</div><div>¿Quiénes somos?</div>
+    </footer>
+    <script src="sopa.js"></script>
+
+</body>
+
+<style>
+#ambatukam{
+    background: linear-gradient(to right, rgb(252, 151, 255), orange);
+
+    padding: 2% 10%;
+    margin: 2% 0% 5% 0%;
+    flood-opacity: 5%;
+    border: 5px solid black;
+    border-radius: 2% 3%;
+}
+ul
+{
+    color: white;
+}
+</style>
+</html>

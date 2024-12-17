@@ -28,7 +28,9 @@ SOFTWARE.
     
     <body>
       <section id="header">
-        <img id="logo" src="../src/img/logo.png">
+        <a href="../index.html">
+          <img id="logo" src="../src/img/logo.png">
+        </a>
         <img id="title" src="../src/img/title.png">
     
         <h1>PASATIEMPOS</h1>
@@ -41,7 +43,6 @@ SOFTWARE.
      margin-top: 3px;
      margin-bottom: 1em;
     }
-    
     .sudoku-board-cell {
      display: inline-block;
      position: relative;
@@ -49,7 +50,9 @@ SOFTWARE.
      background: white;
      max-width: 11.11111%;
     }
-    
+    a{
+      text-decoration: none;
+    }
     [data-board-size="9"].sudoku-board .sudoku-board-cell:nth-of-type(9n+1) {
      border-left-width: 2px;
      border-left-color: #808080;
@@ -183,6 +186,14 @@ SOFTWARE.
      max-width: 100%;
      margin-left: auto;
      margin-right: auto;
+    }
+
+    #logo{
+      transition: 0.3s ease;
+    }
+
+    #title{
+      transition: 0.3s ease;
     }
     
     @media(min-width: 30em) {
@@ -318,9 +329,7 @@ body {
 h1 {
     display:none;
 }
-a{
-  display: none;
-}
+
 
 #content {
     display: flex;
@@ -358,4 +367,11 @@ footer div:hover {
     color: #007BFF;
 }
 
+#logo:hover{
+    transform: scale(1.2)
+}
+
+#title:hover{
+    transform: scale(1.015)
+}
   </style>
