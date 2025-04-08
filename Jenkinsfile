@@ -42,5 +42,10 @@ pipeline{
                 }
             }
         }
+        stage("Portal de calidad"){
+            steps {
+                waitForQualityGate abortPipeline: false, credentialsID: 'jenkins-sonarqube-token'
+            }
+        }
     }
 }
