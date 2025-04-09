@@ -71,5 +71,23 @@ pipeline{
                 }
             }
         }
+	stage("Docker Image, Build y Push"){
+    		steps {
+        		script {
+            			def imageName = "${DOCKER_USER}/${APP_NAME}".toLowerCase().replaceAll("[^a-z0-9._-]", "-")
+            			def imageTag = "${RELEASE}-${env.BUILD_NUMBER}"
+
+            		docker.withRegistry('', DOCKER_PASS) {
+                		docker_image = docker.build("${imageName}:${imageTag}")
+            		}
+
+            		docker.withRegistry('', DOCKER_PASS) {
+                		docker_image.push()
+                		docker_image.push("latest")
+			        }
+		        }
+	        }
+        }
+
     }
 }
