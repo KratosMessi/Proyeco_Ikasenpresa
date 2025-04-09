@@ -58,7 +58,7 @@ environment {
             }
         }
         stage("Dockermovida"){        
-            stage{
+            steps{
                 script {
                     docker.withRegistry('', DOCKER_PASS) {
                         docker_image = docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
