@@ -11,8 +11,10 @@ environment {
 	RELEASE = "1.0.0"
 	DOCKER_USER = "kratosmessi1"
 	DOCKER_PASS = "dockerhub"
-	IMAGE_NAME = "${DOCKER_USER}/${APP_NAME}"   // <-- esto ya es válido
+	IMAGE_NAME = "${DOCKER_USER}/${APP_NAME}"
 	IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
+    GIT_REPO = "https://github.com/KratosMessi/produccion.git"
+    GIT_BRANCH = "main"
 	}
 
     stages{
@@ -71,6 +73,24 @@ environment {
                 }
             }        
         }
+<<<<<<< HEAD
+=======
+        stage("Actualizar manifiesto GitOps") {
+            steps {
+                sshagent(credentials: ['github-ssh']) {
+                    sh '''
+                        git clone -b ${GIT_BRANCH} ${GIT_REPO} repo-gitops
+                        cd repo-gitops
+                        sed -i "s|image: ${IMAGE_NAME}:.*|image: ${IMAGE_NAME}:${IMAGE_TAG}|" deployment.yaml
+                        git config user.email "jenkins@local"
+                        git config user.name "Jenkins CI"
+                        git commit -am "Actualiza tag de imagen a ${IMAGE_TAG}"
+                        git push origin ${GIT_BRANCH}
+                    '''
+                }
+            }
+        }
+>>>>>>> c1640a0c418af37e3de31632adb240c49d230935
         stage("Disparar la Pipeline CD"){        
             steps{
                 script {
