@@ -71,12 +71,5 @@ environment {
                 }
             }        
         }
-        stage("Disparar la Pipeline CD"){        
-            steps{
-                script {
-                    sh "curl -v -k --user admin:${JENKINS_API_TOKEN} -X POST -H 'cache-control: no-cache' -H 'content-type: application/x-www-form-urlencoded' --data 'IMAGE_TAG=${IMAGE_TAG}' 'http://10.10.10.190/job/pipeline-gitops/buildWithParameters?token=gitops-token'"
-                }
-            }
-        }
     }
 }
