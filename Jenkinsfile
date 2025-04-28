@@ -16,32 +16,32 @@ environment {
 }
 
     stages{
-        stage("Cleanup Workspace"){
+        stage("Limpiar el Workspace"){
             steps {
                 cleanWs()
             }
 
         }
     
-        stage("Checkout from SCM"){
+        stage("Checkout de SCM"){
             steps {
                 git branch: 'main', credentialsId: 'github', url: 'https://github.com/KratosMessi/Proyeco_Ikasenpresa'
             }
 
         }
-        stage("Build Application"){
+        stage("Construir aplicacion MVN"){
             steps {
                 sh "mvn clean package"
             }
 
         }
-        stage("Test Application"){
+        stage("Testear applicacion MVN"){
             steps {
                 sh "mvn test"
             }
 
         }
-        stage("Analisis Sonarqube"){
+        stage("Analisis con Sonarqube"){
             steps {
                 script{
                     withSonarQubeEnv(credentialsID: 'jenkins-sonarqube-token'){
@@ -50,14 +50,14 @@ environment {
                 }
             }
         }
-        stage("Portal de calidad"){
+        stage("Esperar por la QualityGate"){
             steps {
                 script{
                     waitForQualityGate abortPipeline: false, credentialsID: 'jenkins-sonarqube-token'
                 }
             }
         }
-        stage("Dockermovida"){        
+        stage("Construir imagen en Docker"){        
             steps{
                 script {
                     docker.withRegistry('', DOCKER_PASS) {
